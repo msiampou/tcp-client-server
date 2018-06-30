@@ -22,7 +22,7 @@ Server can also listen to an other port in odrer to receive the following comman
 
 ##### Running
 ```
-./myhttpd -p serverport -c commandport -t num_threads -d root_directory
+./myhttpd -p server_port -c command_port -t num_threads -d root_directory
 ```
 ### TCP Web Crawler in C
 
@@ -31,11 +31,19 @@ Crawler can also listen to an other port in odrer to receive the following comma
  
 ##### Running
 ```
-./mycrawler -h host_or_IP_Server -p serverport -c commandport -t num_threads -d save_dir starting_URL
+./mycrawler -h host_or_IP -p server_port -c command_port -t num_threads -d save_dir starting_URL
 ```
 ### Compilation
 To compile each program type ```make``` . Type ```make clean``` to remove object files.
- 
+
+### Telnet
+Command requests can be sent from admin via Telnet, by typing:
+``` telnet localhost command_port ```
+Connection closes after sending a request.
+
+### Http Requests
+Http Requests can be also sent via Firefox by typing 
+``` localhost:server_port/root_directory/page_name``` 
  
 
 
