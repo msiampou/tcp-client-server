@@ -72,7 +72,6 @@ int main(int argc, char **argv) {
         if(CommandHandler(buf, begin, thr_pool) == 1){
             break;
         }
-	//shutdown(newcom_sock,SHUT_RDWR);
         close(newcom_sock);
         printf("closed sock\n");
     }
