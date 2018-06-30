@@ -34,7 +34,7 @@ Crawler can also listen to an other port in odrer to receive the following comma
 ./mycrawler -h host_or_IP -p server_port -c command_port -t num_threads -d save_dir starting_URL
 ```
 ### Compilation
-To compile each program type ```make``` . Type ```make clean``` to remove object files.
+To compile each program type ```make``` inside relevant directory. Type ```make clean``` to remove object files.
 
 ### Telnet
 Command requests can be sent from admin via Telnet, by typing:
