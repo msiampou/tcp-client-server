@@ -120,10 +120,8 @@ int main(int argc, char *argv[]){
                 printf("%s\n",buffer);
 
                 /* SHUTDOWN message received */
-                if(CommandHandler(buffer, begin, thr_pool->statistics->pages, thr_pool->statistics->bytes) == 1){
-                    //hr_pool_destroy(thr_pool,num_threads);
+                if(CommandHandler(buffer, begin, thr_pool->statistics->pages, thr_pool->statistics->bytes) == 1)
                     break;
-                }
                 close(newcom_sock);
 
             }
