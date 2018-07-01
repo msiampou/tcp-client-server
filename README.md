@@ -1,4 +1,4 @@
-# TCP Client/Server
+# TCP Client/Server using Sockets
 
 The following program is devided into 3 units:
  - Web Site Creator
