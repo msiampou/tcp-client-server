@@ -37,7 +37,7 @@ Crawler can also listen to an other port in odrer to receive the following comma
 To compile each program type ```make``` inside relevant directory. Type ```make clean``` to remove object files.
 
 ### Telnet
-Command requests can be sent from admin via Telnet, by typing:
+Command requests can be sent via Telnet, by typing:
 ``` telnet localhost command_port ```
 Connection closes after sending a request.
 
