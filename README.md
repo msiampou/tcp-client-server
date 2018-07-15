@@ -7,7 +7,7 @@ The following program is devided into 3 units:
  
 ### Web Site Creator in Shell
 
-Creates w websites which contain p pages (html files) - on disk and stores them into root_directory.
+Creates w websites which contain p pages (html files) and stores them into root_directory.
 
 ##### Running
 ```
