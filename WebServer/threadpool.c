@@ -62,13 +62,7 @@ void thr_pool_add(threadpool* pool, int fd, int size, char* file){
 void thr_pool_destroy(threadpool* pool, int num_threads){
 
     pool->finished = 1;
-    printf("pool->finished = 1\n");
     pthread_cond_broadcast(&(pool->cond));
-    printf("\nALL THREADS MUST EXIT\n");
-    printf("\nBROADCAST\n\n");
-    for(int i = 0; i < num_threads; i++)
-        printf("THREAD %lu EXITED\n",pool->thr_p[i]);
-    printf("\n... Deallocating Memory ...\n");
     for(int i = 0; i < num_threads; i++)
        pthread_join(pool->thr_p[i], NULL);
 
