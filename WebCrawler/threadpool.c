@@ -50,12 +50,9 @@ void thr_pool_add(threadpool* pool, char* url){
     enqueue(pool->JobQueue,newJob);
     pool->count++;
 
-    printf("signal\n");
     pthread_cond_signal(&(pool->cond));
 
     pthread_mutex_unlock(&(pool->lock));
-    printf("\nmutex unlocked in add\n");
-
 }
 
 void thr_pool_destroy(threadpool* pool, int num_threads){
@@ -69,7 +66,6 @@ void thr_pool_destroy(threadpool* pool, int num_threads){
 void thr_pool_free(threadpool* pool){
 
     free(pool->thr_p);
-    //q_destroy(pool->JobQueue);
     q_destroy(pool->dummyQueue);
     free(pool->JobQueue);
     free(pool->dummyQueue);
