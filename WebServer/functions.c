@@ -128,5 +128,5 @@ int FileManagment(int fd, char* file){
 
         return 0;
     }
-    //close(fd);
+    close(fd);
 }
