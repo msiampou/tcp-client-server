@@ -17,7 +17,6 @@ void* thr_job(void* p){
     threadpool* pool = (threadpool*)p;
 
     while(pool->finished == 0){
-        printf("before wait\n");
 
         pthread_mutex_lock(&(pool->lock));
 
@@ -26,18 +25,14 @@ void* thr_job(void* p){
             /*waiting until an insertion into queue*/
             if(pthread_cond_wait(&(pool->cond), &(pool->lock)) !=0)
                 printf("error\n");
-            printf("after wait\n");
 
-            if(pool->finished == 1){
-                printf("finished 1\n");
+            if(pool->finished == 1)
                 break;
-            }
 
         }
 
         if(pool->finished == 1){
             pthread_mutex_unlock(&(pool->lock));
-            printf("finished 2\n");
             break;
         }
 
@@ -45,12 +40,10 @@ void* thr_job(void* p){
 
         if(pool->finished == 1){
             pthread_mutex_unlock(&(pool->lock));
-            printf("finished 3\n");
             break;
         }
 
         Job* task = dequeue(pool->JobQueue);
-        printf("after dequeue\n");
         if(task->file!=NULL){
 
             char* file = (char*)malloc(4096 * sizeof(char));
@@ -73,6 +66,5 @@ void* thr_job(void* p){
         }
         pthread_mutex_unlock(&(pool->lock));
     }
-    printf("before return\n");
     return 0;
 }
